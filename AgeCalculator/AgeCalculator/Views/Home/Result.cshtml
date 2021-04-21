@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Http;
+@model PersonViewModel
+
+@{
+    ViewData["Title"] = "Result";
+    var canDrive = @ViewData["DriveResult"];
+    var canDrink = @ViewData["DrinkResult"];
+}
+
+<h1>Result</h1>
+
+<p>Your name is @ViewData["UserName"].</p> <p>You are @ViewData["Age"] years old.</p>
+
+@*<p>Based on your age, you @ViewData["Drive"] and @ViewData["Drink"].</p>*@
+
+@if (canDrive)
+{
+    <p>This person can drive.</p>
+}
+
+@if (@Model.CanDrink)
+{
+    <h2>This person can drink.</h2>
+}
+else
+{
+    <h1>This person is too young to drink.</h1>
+}
